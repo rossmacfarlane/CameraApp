@@ -1,7 +1,18 @@
 <Alloy>
-	<NavigationWindow>
+	<Collection src="image"/>
+	<NavigationWindow id="navWin">
 		<Window class="container">
-			<Label id="label" onClick="doClick">Hello, World</Label>
+			<RightNavButton>
+				<Button id="btnTakeImage" systemButton="CAMERA" onClick="takeImage"/>
+			</RightNavButton>
+			<TableView dataCollection="image">
+				<TableViewRow layout="horizontal" hasChild="true" onClick="viewImage" guid="{alloy_id}">
+					<ImageView id="image"  height="50" image="{filepath}"></ImageView>
+					<Label id="imageName" text="{name}"></Label>bel>
+				</TableViewRow>
+			</TableView>
+			<Toolbar bottom="0">
+			</Toolbar>
 		</Window>
 	</NavigationWindow>
 </Alloy>

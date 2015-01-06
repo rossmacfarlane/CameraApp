@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="detailWindow" class="container">
+			<ImageView id="image" onClick="enableTextField"></ImageView>
+			<View id="nameContainer">
+				<View id="nameBackground"></View>
+				<TextField id="imageName" hintText="Enter image name"></TextField>
+			</View>
+	</Window>
+</Alloy>

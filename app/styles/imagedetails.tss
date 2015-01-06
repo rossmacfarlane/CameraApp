@@ -1,0 +1,38 @@
+
+".container": {
+	backgroundColor:"white"
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"#label": {
+	font: {
+		fontSize: 12
+	}
+}
+
+"#imageName": {
+	color: "#FFF",
+	font: {
+		fontSize: 16
+	},
+	tintColor: "#FFF"
+}
+
+"#nameContainer": {
+	height: 50,
+	top: -50
+}
+
+"#nameBackground": {
+	backgroundColor: "#333",
+	opacity: 0.7
+}
+
+"#image": {
+	top: 0
+}
