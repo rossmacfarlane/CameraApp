@@ -27,9 +27,9 @@ function viewImage(event){
 	if (OS_IOS) {
         $.navWin.openWindow(imageView);
     }
- 	if (OS_ANDROID){
+    if (OS_ANDROID){
         imageView.open();
-    }   
+    }
 }
 
 function saveImage(filepath, imageData){
@@ -40,9 +40,9 @@ function saveImage(filepath, imageData){
 function takeImage(e){
 	Ti.Media.showCamera({
 	success:function(event) {
- 	// called when media returned from the camera
+	// called when media returned from the camera
 		Ti.API.debug('Our type was: '+event.mediaType);
- 		if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+		if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
 			var image = event.media;
 			var guid = Ti.Platform.createUUID();
 			var path = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, guid + '.png').nativePath;
@@ -62,23 +62,23 @@ function takeImage(e){
 			};
 			var imageView = Alloy.createController("imagedetails", args).getView();
 			if (OS_IOS) {
-		        $.navWin.openWindow(imageView);
-		    }
-		 	if (OS_ANDROID){
-		        imageView.open();
-		    }   
-		    			
+				$.navWin.openWindow(imageView);
+			}
+			if (OS_ANDROID){
+				imageView.open();
+			}
+
 		} else {
 			alert("got the wrong type back ="+event.mediaType);
 		}
 	},
 	cancel:function() {
- 	// called when user cancels taking a picture
+	// called when user cancels taking a picture
 	},
 	error:function(error) {
- 	// called when there's an error
+	// called when there's an error
 		var a = Titanium.UI.createAlertDialog({title:'Camera'});
- 		if (error.code == Titanium.Media.NO_CAMERA) {
+		if (error.code == Titanium.Media.NO_CAMERA) {
 			a.setMessage('Please run this test on device');
 		} else {
 			a.setMessage('Unexpected error: ' + error.code);
@@ -86,9 +86,9 @@ function takeImage(e){
 		a.show();
 	},
 	saveToPhotoGallery:true,
- 	// allowEditing and mediaTypes are iOS-only settings
+	// allowEditing and mediaTypes are iOS-only settings
 	allowEditing:true,
-	mediaTypes:[Ti.Media.MEDIA_TYPE_VIDEO,Ti.Media.MEDIA_TYPE_PHOTO]
+	mediaTypes:[Ti.Media.MEDIA_TYPE_PHOTO]
 	});
 }
 
